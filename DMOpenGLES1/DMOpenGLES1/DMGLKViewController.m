@@ -93,7 +93,21 @@ static const SceneVertex vertices[] = {
 
 
 
-
+- (void)dealloc
+{
+    NSLog(@"%s",__func__);
+    GLKView *view = (GLKView *)self.view;
+    [EAGLContext setCurrentContext:view.context];
+    
+    if (self.vertexBufferID != 0) {
+        glDeleteBuffers(1,
+                        &_vertexBufferID);
+        self.vertexBufferID = 0;
+    }
+    
+    ((GLKView *)self.view).context = nil;
+    [EAGLContext setCurrentContext:nil];
+}
 
 
 /*
