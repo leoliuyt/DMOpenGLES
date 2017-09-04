@@ -21,22 +21,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeC-84-wsM">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeC-84-wsM">
+                                <rect key="frame" x="164" y="98" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7Qt-yV-tjV"/>
+                                    <constraint firstAttribute="width" constant="46" id="ggZ-GT-Bhx"/>
+                                </constraints>
+                                <state key="normal" title="三角形"/>
                                 <connections>
                                     <segue destination="1n4-0j-khm" kind="show" id="YFt-gn-sjn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZh-TS-DfK">
+                                <rect key="frame" x="171.5" y="173" width="31" height="30"/>
+                                <state key="normal" title="矩形"/>
+                                <connections>
+                                    <segue destination="8gu-7f-GFG" kind="show" id="d9Q-Kh-3x5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xeC-84-wsM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8zj-vH-jjm"/>
+                            <constraint firstItem="RZh-TS-DfK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cfe-nZ-BcY"/>
+                            <constraint firstItem="xeC-84-wsM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="byS-ak-yXB"/>
+                            <constraint firstItem="RZh-TS-DfK" firstAttribute="top" secondItem="xeC-84-wsM" secondAttribute="bottom" constant="45" id="i3V-St-wty"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Nxd-i3-WRP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1055.2" y="122.78860569715144"/>
+        </scene>
+        <!--GLKit View Controller-->
+        <scene sceneID="zHI-iJ-LYD">
+            <objects>
+                <glkViewController preferredFramesPerSecond="30" id="8gu-7f-GFG" customClass="DMRectangleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LcV-ZA-gcP"/>
+                        <viewControllerLayoutGuide type="bottom" id="4em-an-Ksc"/>
+                    </layoutGuides>
+                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" id="27r-Mn-Xtc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <connections>
+                            <outlet property="delegate" destination="8gu-7f-GFG" id="qj3-yK-hUG"/>
+                        </connections>
+                    </glkView>
+                </glkViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u9U-dp-BKw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1916" y="185"/>
         </scene>
         <!--GLKit View Controller-->
         <scene sceneID="txl-vx-x3O">
@@ -56,7 +92,7 @@
                 </glkViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6kd-me-Msn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1724" y="122.78860569715144"/>
+            <point key="canvasLocation" x="1902" y="-657"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tln-PT-fAI">

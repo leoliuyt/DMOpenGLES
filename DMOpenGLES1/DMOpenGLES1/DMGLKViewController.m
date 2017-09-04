@@ -39,12 +39,13 @@ static const SceneVertex vertices[] = {
     
     self.baseEffect = [[GLKBaseEffect alloc] init];
     self.baseEffect.useConstantColor = GL_TRUE;
+    //图形填充颜色
     self.baseEffect.constantColor = GLKVector4Make(
                                                    1.f,//Red
-                                                   1.f,//Green
-                                                   1.f,//Blue
+                                                   0.f,//Green
+                                                   0.f,//Blue
                                                    1.f);//Alpha
-    glClearColor(0, 0, 0, 1.f);
+    glClearColor(0, 0, 1, 1.f);//背景颜色
     
     //第一步： 为缓存生成标识
     glGenBuffers(1,//生成缓存标识的数量
